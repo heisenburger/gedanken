@@ -1,0 +1,71 @@
+/**
+* idk
+*/
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i|Roboto:100,100i,300,300i,400,400i,700,700i');
+
+// Override theme settings
+$mainFont: -apple-system, BlinkMacSystemFont, 
+  "Roboto", "Ubuntu", "Segoe UI", 
+  "Fira Sans", "Droid Sans", "Helvetica Neue", 
+  sans-serif;
+$mainColor: #2B2B2B;
+
+$displayFont: 'Playfair Display', "Adobe Caslon Pro","Athelas","Goudy Old Style","Californian FB", Georgia, serif;
+
+$headingFont: $mainFont;
+$headingColor: $mainColor;
+$headingFontWeight: 700;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$heading1Size: 5rem;
+$heading2Size: 4rem;
+$heading3Size: 3rem;
+$heading4Size: 2rem;
+
+$backgroundColor: #fdfdfd;
+$linkColor: #a58e19;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionColor: $mainColor;
+$selectionBackgroundColor: lighten($linkColor, 30%);
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+// Theme specific ------------------------------
+.highlight {
+  background-color: lighten($linkColor,30%);
+  box-shadow: -0.2em 0 0 lighten($linkColor,30%),0.2em 0 0 lighten($linkColor,30%);
+}
+
+.reveal .title {
+  text-align: left;
+  h1 {
+    color: $mainColor;
+    font-family: $displayFont;
+    font-size: 4.5rem;
+    text-transform: none;
+  }
+  h2 {
+    color: $mainColor;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+// Overrides -----------------------------------
+
+.reveal .controls button {
+  opacity: 0;
+}
+// ---------------------------------------------
