@@ -24,17 +24,103 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
         <section class="title" data-transition="fade-in slide-out">
           <h1><span class="highlight">The Ideal Styling Language:</span><br/>
             A Gedankenexperiment</h1>
           <h2>Serena Chen | CSSConfAu 2016</h2>
         </section>
+
 				<section data-transition="fade-in slide-out">
           <h1>CSS: 1996 - 2016</h1>
+          <ul>
+            <li class="fragment fade-down">The internet was made for <span class="highlight">documents</span></li>
+            <li class="fragment fade-down">Global scope and the cascade made sense</li>
+            <li class="fragment fade-down">Denizens of the web have changed. Web development has changed.</li>
+          </ul>
 				</section>
+
 				<section data-transition="fade-in slide-out">
           <h1>Molding CSS to our needs</h1>
+          <ul>
+            <li class="fragment fade-down">SASS allowed common programming patterns such as variables, mixins (i.e. functions) and extensions.</li>
+            <li class="fragment fade-down">PostCSS made writing for multiple browsers more bearable</li>
+            <li class="fragment fade-down">CSS Modules mean the end of global namespaces.</li>
+            <li class="fragment fade-down"><span class="highlight">We're increasingly bandaiding a solution</span></li>
+            <li class="fragment fade-down">The core pain point of CSS is still the same:</li>
+          </ul>
         </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>It's hard to write <span class="highlight">maintainable</span> CSS at <span class="highlight">scale</span>.</h3>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3 class="display"><em>Let’s indulge in a thought experiment...</em></h3>
+          
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h2 class="display highlight" align="left">What would CSS look like if it were written today?</h2>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <p><strike>(Probably JavaScript)</strike></p>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <p>This is not necessarily a bad thing, <span class="fragment">except when it is.</span></p>
+          <p class="fragment fade-down">Web owes its success to its accessibility.</p>
+          <p class="fragment fade-down">This accessibility is made possible with clear separation between content, style, and logic.</p>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <section id="css-pain-points" data-transition="fade-in slide-out">
+          <h2>Our biggest pain points:</h2>
+            <ol>
+              <li class="fragment fade-down">Inheritance &amp; the Cascade
+                <ul>
+                  <li class="fragment fade-down">The <a href="#the-cascade">cascade</a> is opaque</li>
+                  <li class="fragment fade-down">Inheritance is opaque</li>
+                  <li class="fragment fade-down">Global scope</li>
+                </ul>
+              </li>
+              <li class="fragment fade-down">Selectors
+                <ul>
+                  <li class="fragment fade-down"></li>
+                  <li class="fragment fade-down">Inheritance is opaque</li>
+                  <li class="fragment fade-down">Global scope</li>
+                </ul>
+              </li>
+              <li>Language limitations</li>
+            </ol>
+          </section>
+
+          <section id="the-cascade" data-transition="fade-in slide-out" class="aside" data-background-color="#2b2b2b">
+            <ol>
+              <li>Filter rules for each element</li>
+              <li>Cascade order <sup><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade">MDN</a></sup></li>
+              <ol>
+                <li>User agent</li>
+                <li>User agent <em>!important</em></li>
+                <li>User</li>
+                <li>Author</li>
+                <li>CSS Animations <em>(doesn't cascade)</em></li>
+                <li>Author <em>!important</em></li>
+                <li>User <em>!important</em></li>
+              </ol>
+              <li>Specificity</li>
+            </ol>
+            <p align="right"><a href="#css-pain-points">&#65514;</a></p>
+          </section>
+
+        </section>
+
+        
+
+        <section data-transition="fade-in slide-out">
+        </section>
+
 			</div>
 		</div>
 

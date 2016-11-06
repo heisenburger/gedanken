@@ -285,6 +285,10 @@ body {
   background-color: #e9d56e;
   box-shadow: -0.2em 0 0 #e9d56e, 0.2em 0 0 #e9d56e; }
 
+.reveal .display {
+  font-family: "Playfair Display", "Adobe Caslon Pro", "Athelas", "Goudy Old Style", "Californian FB", Georgia, serif;
+  font-weight: 700; }
+
 .reveal .title {
   text-align: left; }
   .reveal .title h1 {
@@ -297,6 +301,17 @@ body {
     font-size: 1.5rem;
     letter-spacing: 0.05em;
     text-transform: uppercase; }
+
+.aside {
+  color: #fdfdfd; }
+  .aside .reveal h1, .aside .reveal h2, .aside .reveal h3, .aside .reveal h4, .aside .reveal h5 {
+    color: #fdfdfd; }
+
+.reveal p {
+  text-align: left; }
+
+.reveal li {
+  margin: 0.4em 0; }
 
 .reveal .controls button {
   opacity: 0; }

@@ -42,9 +42,15 @@ $selectionBackgroundColor: lighten($linkColor, 30%);
 // ---------------------------------------------
 
 // Theme specific ------------------------------
+
 .highlight {
   background-color: lighten($linkColor,30%);
   box-shadow: -0.2em 0 0 lighten($linkColor,30%),0.2em 0 0 lighten($linkColor,30%);
+}
+
+.reveal .display {
+  font-family: $displayFont;
+  font-weight: 700;
 }
 
 .reveal .title {
@@ -63,7 +69,24 @@ $selectionBackgroundColor: lighten($linkColor, 30%);
   }
 }
 
+.aside {
+  color: $backgroundColor;
+  
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+    color: $backgroundColor;
+  }
+}
+
+
 // Overrides -----------------------------------
+
+.reveal p {
+  text-align: left;
+}
+
+.reveal li {
+  margin: 0.4em 0;
+}
 
 .reveal .controls button {
   opacity: 0;
