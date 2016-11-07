@@ -31,6 +31,8 @@
           <h2>Serena Chen | CSSConfAu 2016</h2>
         </section>
 
+<!-- INTRO; PROBLEM STATEMENT -->
+
 				<section data-transition="fade-in slide-out">
           <h1>CSS: 1996 - 2016</h1>
           <ul>
@@ -56,12 +58,13 @@
         </section>
 
         <section data-transition="fade-in slide-out">
-          <h3 class="display"><em>Let’s indulge in a thought experiment...</em></h3>
-          
+          <h3 class="display" align="left"><em>Let’s indulge in a thought experiment...</em></h3>
         </section>
 
+<!-- TITLE CARD -->
+
         <section data-transition="fade-in slide-out">
-          <h2 class="display highlight" align="left">What would CSS look like if it were written today?</h2>
+          <h2 class="display" align="left"><span class="highlight">What would CSS look like if it were written today?</span></h2>
         </section>
 
         <section data-transition="fade-in slide-out">
@@ -75,7 +78,7 @@
         </section>
 
         <section data-transition="fade-in slide-out">
-          <section id="css-pain-points" data-transition="fade-in slide-out">
+          <section data-transition="fade-in slide-out">
           <h2>Our biggest pain points:</h2>
             <ol>
               <li class="fragment fade-down">Inheritance &amp; the Cascade
@@ -87,19 +90,25 @@
               </li>
               <li class="fragment fade-down">Selectors
                 <ul>
-                  <li class="fragment fade-down"></li>
-                  <li class="fragment fade-down">Inheritance is opaque</li>
-                  <li class="fragment fade-down">Global scope</li>
+                  <li class="fragment fade-down">are hard to write good</li>
+                  <li class="fragment fade-down">Specificity wars</li>
+                  <li class="fragment fade-down">Dead code</li>
                 </ul>
               </li>
-              <li>Language limitations</li>
+              <li class="fragment fade-down">Language limitations
+                <ul>
+                  <li class="fragment fade-down">Variables</li>
+                  <li class="fragment fade-down">Functions</li>
+                  <li class="fragment fade-down">Scope</li>
+                </ul>
+              </li>
             </ol>
           </section>
 
-          <section id="the-cascade" data-transition="fade-in slide-out" class="aside" data-background-color="#2b2b2b">
+          <section id="the-cascade" data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
             <ol>
               <li>Filter rules for each element</li>
-              <li>Cascade order <sup><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade">MDN</a></sup></li>
+              <li>Cascade order <sup><a href="https://www.w3.org/TR/CSS21/cascade.html#cascade">W3C</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade">MDN</a></sup></li>
               <ol>
                 <li>User agent</li>
                 <li>User agent <em>!important</em></li>
@@ -111,12 +120,87 @@
               </ol>
               <li>Specificity</li>
             </ol>
-            <p align="right"><a href="#css-pain-points">&#65514;</a></p>
           </section>
 
         </section>
 
-        
+<!-- LANGUAGE FEATURES -->
+
+        <section id="language-features" data-transition="fade-in slide-out">
+          <h1 class="display" align="left"><span class="highlight">Language Features</span></h1>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          
+          <section data-transition="fade-in slide-out">
+            <h1 align="left">Choosing a paradigm</h1>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2 align="left">Imperative, functional, declarative, object-oriented?</h2>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <p>Global, 'document'-style &rarr; Component view</p>
+            <p class="fragment fade-down" align="right">&darr;<br/>Object-oriented ?</p>
+            <h4 class="fragment fade-down" align="left">Remember: separation of concerns is a key strength of the web.</h4>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h4>What does CSS, just CSS, do?</h4>
+            <ul>
+              <li class="fragment fade-down">looks for elements</li>
+              <li class="fragment fade-down"><span class="highlight">maps</span> values onto properties</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h4>~*~Functional~*~</h4>
+          </section>
+
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h1 align="left">Variables</h1>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h1 align="left">Animation and interaction</h1>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h1 align="left">Asynchronous loading</h1>
+        </section>
+
+<!-- INHERITANCE AND THE CASCADE -->
+
+        <section id="inheritance-cascade" data-transition="fade-in slide-out">
+          <h1 class="display" align="left"><span class="highlight">Inheritance &amp; <br/>the Cascade</span></h1>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+          <p>We want inheritance to be knowable</p>
+          <pre><code data-trim data-noescape>
+// Global variables
+  @import settings.ss;
+// Utility functions
+  @import tools.ss;
+            </code></pre>
+        </section>
+
+<!-- SELECTORS AND SPECIFICITY -->
+
+        <section id="selectors-specificity" data-transition="fade-in slide-out">
+          <h1 class="display" align="left"><span class="highlight">Selectors &amp; Specificity</span></h1>
+        </section>
+
+<!-- DESIGN AND THE ECOSYSTEM -->
+
+        <section data-transition="fade-in slide-out">
+          <h1 class="display" align="left"><span class="highlight">Design and the Ecosystem</span></h1>
+        </section>
+
+<!-- WRAP UP -->
 
         <section data-transition="fade-in slide-out">
         </section>

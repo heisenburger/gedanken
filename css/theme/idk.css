@@ -39,7 +39,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Ubuntu", "Segoe UI", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: normal;
+  letter-spacing: -0.01em;
   text-transform: none;
   text-shadow: none;
   word-wrap: break-word; }
@@ -54,7 +54,7 @@ body {
   font-size: 3rem; }
 
 .reveal h4 {
-  font-size: 2rem; }
+  font-size: 2.5rem; }
 
 .reveal h1 {
   text-shadow: none; }
@@ -150,7 +150,7 @@ body {
 
 .reveal pre code {
   display: block;
-  padding: 5px;
+  padding: 1em;
   overflow: auto;
   max-height: 400px;
   word-wrap: normal; }
@@ -302,10 +302,16 @@ body {
     letter-spacing: 0.05em;
     text-transform: uppercase; }
 
-.aside {
+.darkbg {
   color: #fdfdfd; }
-  .aside .reveal h1, .aside .reveal h2, .aside .reveal h3, .aside .reveal h4, .aside .reveal h5 {
+  .darkbg .reveal h1, .darkbg .reveal h2, .darkbg .reveal h3, .darkbg .reveal h4, .darkbg .reveal h5 {
     color: #fdfdfd; }
+
+html {
+  font-feature-settings: "kern" 1,"liga" 1,"calt" 1,"pnum" 1,"tnum" 0,"onum" 1,"lnum" 0,"dlig" 0; }
+
+.reveal sup {
+  font-size: 0.7em; }
 
 .reveal p {
   text-align: left; }

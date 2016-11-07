@@ -24,10 +24,11 @@ $headingColor: $mainColor;
 $headingFontWeight: 700;
 $headingTextShadow: none;
 $headingTextTransform: none;
+$headingLetterSpacing: -0.01em;
 $heading1Size: 5rem;
 $heading2Size: 4rem;
 $heading3Size: 3rem;
-$heading4Size: 2rem;
+$heading4Size: 2.5rem;
 
 $backgroundColor: #fdfdfd;
 $linkColor: #a58e19;
@@ -69,7 +70,7 @@ $selectionBackgroundColor: lighten($linkColor, 30%);
   }
 }
 
-.aside {
+.darkbg {
   color: $backgroundColor;
   
   .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
@@ -77,8 +78,16 @@ $selectionBackgroundColor: lighten($linkColor, 30%);
   }
 }
 
+html {
+  font-feature-settings: "kern" 1,"liga" 1,"calt" 1,"pnum" 1,"tnum" 0,"onum" 1,"lnum" 0,"dlig" 0
+}
+
 
 // Overrides -----------------------------------
+
+.reveal sup {
+  font-size: 0.7em;
+}
 
 .reveal p {
   text-align: left;
