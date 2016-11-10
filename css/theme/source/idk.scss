@@ -36,6 +36,8 @@ $linkColorHover: lighten( $linkColor, 20% );
 $selectionColor: $mainColor;
 $selectionBackgroundColor: lighten($linkColor, 30%);
 
+$blue: aqua;
+$orange: chocolate;
 
 
 // Theme template ------------------------------
@@ -47,6 +49,22 @@ $selectionBackgroundColor: lighten($linkColor, 30%);
 .highlight {
   background-color: lighten($linkColor,30%);
   box-shadow: -0.2em 0 0 lighten($linkColor,30%),0.2em 0 0 lighten($linkColor,30%);
+}
+
+.accent {
+  color: $linkColor;
+}
+
+.accent-2 {
+  color: $blue;
+}
+
+.accent-3 {
+  color: $orange;
+}
+
+.reveal .ghost {
+  opacity: 0;
 }
 
 .reveal .display {
@@ -70,11 +88,15 @@ $selectionBackgroundColor: lighten($linkColor, 30%);
   }
 }
 
-.darkbg {
+.reveal .small-text {
+  font-size: 0.5em;
+}
+
+.reveal .darkbg {
   color: $backgroundColor;
   
-  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
-    color: $backgroundColor;
+  h1, h2, h3, h4, h5 {
+    color: $backgroundColor !important;
   }
 }
 

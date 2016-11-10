@@ -78,36 +78,21 @@
         </section>
 
         <section data-transition="fade-in slide-out">
+
           <section data-transition="fade-in slide-out">
-          <h2>Our biggest pain points:</h2>
-            <ol>
-              <li class="fragment fade-down">Inheritance &amp; the Cascade
-                <ul>
-                  <li class="fragment fade-down">The <a href="#the-cascade">cascade</a> is opaque</li>
-                  <li class="fragment fade-down">Inheritance is opaque</li>
-                  <li class="fragment fade-down">Global scope</li>
-                </ul>
-              </li>
-              <li class="fragment fade-down">Selectors
-                <ul>
-                  <li class="fragment fade-down">are hard to write good</li>
-                  <li class="fragment fade-down">Specificity wars</li>
-                  <li class="fragment fade-down">Dead code</li>
-                </ul>
-              </li>
-              <li class="fragment fade-down">Language limitations
-                <ul>
-                  <li class="fragment fade-down">Variables</li>
-                  <li class="fragment fade-down">Functions</li>
-                  <li class="fragment fade-down">Scope</li>
-                </ul>
-              </li>
-            </ol>
+            <h2>Our biggest pain points:</h2>
+            <h3 class="fragment fade-down" style="text-align: center">1. Inheritance &amp; the Cascade</h3>
+            <ul>
+              <li class="fragment fade-down">The cascade is opaque</li>
+              <li class="ghost">Inheritance is opaque</li>
+              <li class="ghost">Global scope</li>
+            </ul> 
           </section>
 
           <section id="the-cascade" data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h3>The cascade:</h3>
             <ol>
-              <li>Filter rules for each element</li>
+              <li>Select element; filter only rules that apply</li>
               <li>Cascade order <sup><a href="https://www.w3.org/TR/CSS21/cascade.html#cascade">W3C</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade">MDN</a></sup></li>
               <ol>
                 <li>User agent</li>
@@ -122,6 +107,172 @@
             </ol>
           </section>
 
+          <section data-transition="fade-in slide-out">
+            <h2>Our biggest pain points:</h2>
+            <h3 style="text-align: center">1. Inheritance &amp; the Cascade</h3>
+            <ul>
+              <li>The cascade is opaque
+                <ul><li>People are afraid of the cascade</li></ul></li>
+              <li class="fragment fade-down">Inheritance is opaque</li>
+              <li class="ghost">Global scope</li>
+            </ul> 
+          </section>
+
+          <section id="inheritance" data-transition="fade-in" class="darkbg" data-background-color="#2b2b2b">
+            <h3>Not all properties are inherited</h3>
+            <ul class="small-text">
+              <li>azimuth</li>
+              <li>border-*</li>
+              <li>color</li>
+              <li>direction</li>
+              <li>elevation</li>
+              <li>empty-cells</li>
+              <li>font-*</li>
+              <li>letter-spacing</li>
+              <li>line-height</li>
+              <li>list-style-*</li>
+              <li>orphans</li>
+              <li>pitch-*</li> 
+              <li>stress</li>
+              <li>text-*</li>
+              <li>visibility</li>
+              <li>voice-family</li>
+              <li>volume</li>
+              <li>white-space</li>
+              <li>widows</li>
+              <li>word-spacing</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade-in" class="darkbg" data-background-color="#2b2b2b">
+            <h3>Not all properties are inherited</h3>
+            <ul class="small-text">
+              <li>azimuth</li>
+              <li>border-*</li>
+              <li class="accent">color</li>
+              <li>direction</li>
+              <li>elevation</li>
+              <li>empty-cells</li>
+              <li class="accent">font-*</li>
+              <li class="accent">letter-spacing</li>
+              <li class="accent">line-height</li>
+              <li class="accent">list-style-*</li>
+              <li class="accent">orphans</li>
+              <li>pitch-*</li> 
+              <li>stress</li>
+              <li class="accent">text-*</li>
+              <li class="accent">visibility</li>
+              <li>voice-family</li>
+              <li>volume</li>
+              <li class="accent">white-space</li>
+              <li class="accent">widows</li>
+              <li class="accent">word-spacing</li>
+            </ul>
+
+            <ul style="position: absolute; right:0rem; list-style: none;">
+              <li class="accent">decorative</li>
+              <li class="accent-2 ghost">settings</li>
+              <li class="accent-3 ghost">aural decoration</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade-in" class="darkbg" data-background-color="#2b2b2b">
+            <h3>Not all properties are inherited</h3>
+            <ul class="small-text">
+              <li>azimuth</li>
+              <li class="accent-2">border-*</li>
+              <li class="accent">color</li>
+              <li class="accent-2">direction</li>
+              <li>elevation</li>
+              <li class="accent-2">empty-cells</li>
+              <li class="accent">font-*</li>
+              <li class="accent">letter-spacing</li>
+              <li class="accent">line-height</li>
+              <li class="accent">list-style-*</li>
+              <li class="accent">orphans</li>
+              <li>pitch-*</li> 
+              <li>stress</li>
+              <li class="accent">text-*</li>
+              <li class="accent">visibility</li>
+              <li>voice-family</li>
+              <li>volume</li>
+              <li class="accent">white-space</li>
+              <li class="accent">widows</li>
+              <li class="accent">word-spacing</li>
+            </ul>
+
+            <ul style="position: absolute; right:0rem; list-style: none;">
+              <li class="accent">decorative</li>
+              <li class="accent-2">settings</li>
+              <li class="accent-3 ghost">aural decoration</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade-in" class="darkbg" data-background-color="#2b2b2b">
+            <h3>Not all properties are inherited</h3>
+            <ul class="small-text">
+              <li class="accent-3">azimuth</li>
+              <li class="accent-2">border-*</li>
+              <li class="accent">color</li>
+              <li class="accent-2">direction</li>
+              <li class="accent-3">elevation</li>
+              <li class="accent-2">empty-cells</li>
+              <li class="accent">font-*</li>
+              <li class="accent">letter-spacing</li>
+              <li class="accent">line-height</li>
+              <li class="accent">list-style-*</li>
+              <li class="accent">orphans</li>
+              <li class="accent-3">pitch-*</li> 
+              <li class="accent-3">stress</li>
+              <li class="accent">text-*</li>
+              <li class="accent">visibility</li>
+              <li class="accent-3">voice-family</li>
+              <li class="accent-3">volume</li>
+              <li class="accent">white-space</li>
+              <li class="accent">widows</li>
+              <li class="accent">word-spacing</li>
+            </ul>
+
+            <ul style="position: absolute; right:0rem; list-style: none;">
+              <li class="accent">decorative</li>
+              <li class="accent-2">settings</li>
+              <li class="accent-3">aural decoration</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>Our biggest pain points:</h2>
+            <h3 style="text-align: center">1. Inheritance &amp; the Cascade</h3>
+            <ul>
+              <li>The cascade is opaque
+                <ul><li>People are afraid of the cascade</li></ul></li>
+              <li>Inheritance is opaque
+                <ul><li>Need clear heustric for inheritance</li></ul>
+              </li>
+              <li class="fragment fade-down">Global scope</li>
+            </ul> 
+          </section>
+
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h2>Our biggest pain points:</h2>
+          <h3 class="fragment fade-down" style="text-align: center">2. Selectors &amp; Specificity</h3>
+          <ul>
+            <li class="fragment fade-down">are hard to write good</li>
+            <li class="fragment fade-down">Specificity wars</li>
+            <li class="fragment fade-down">Dead code</li>
+          </ul>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h2>Our biggest pain points:</h2>
+          <h3 class="fragment fade-down" style="text-align: center">3. Language limitations</h3>
+          <ul>
+            <li class="fragment fade-down">Variables</li>
+            <li class="fragment fade-down">Functions</li>
+            <li class="fragment fade-down">Scope</li>
+          </ul>
         </section>
 
 <!-- LANGUAGE FEATURES -->
@@ -157,6 +308,17 @@
           <section data-transition="fade-in slide-out">
             <h4>~*~Functional~*~</h4>
           </section>
+
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+          <pre><code data-trim data-noescape>
+%function_name (arguments) {
+  // some code here
+  return foo
+}
+
+%
+            </code></pre>
+        </section>
 
         </section>
 

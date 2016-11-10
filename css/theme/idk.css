@@ -285,6 +285,18 @@ body {
   background-color: #e9d56e;
   box-shadow: -0.2em 0 0 #e9d56e, 0.2em 0 0 #e9d56e; }
 
+.accent {
+  color: #a58e19; }
+
+.accent-2 {
+  color: aqua; }
+
+.accent-3 {
+  color: chocolate; }
+
+.reveal .ghost {
+  opacity: 0; }
+
 .reveal .display {
   font-family: "Playfair Display", "Adobe Caslon Pro", "Athelas", "Goudy Old Style", "Californian FB", Georgia, serif;
   font-weight: 700; }
@@ -302,10 +314,13 @@ body {
     letter-spacing: 0.05em;
     text-transform: uppercase; }
 
-.darkbg {
+.reveal .small-text {
+  font-size: 0.5em; }
+
+.reveal .darkbg {
   color: #fdfdfd; }
-  .darkbg .reveal h1, .darkbg .reveal h2, .darkbg .reveal h3, .darkbg .reveal h4, .darkbg .reveal h5 {
-    color: #fdfdfd; }
+  .reveal .darkbg h1, .reveal .darkbg h2, .reveal .darkbg h3, .reveal .darkbg h4, .reveal .darkbg h5 {
+    color: #fdfdfd !important; }
 
 html {
   font-feature-settings: "kern" 1,"liga" 1,"calt" 1,"pnum" 1,"tnum" 0,"onum" 1,"lnum" 0,"dlig" 0; }
