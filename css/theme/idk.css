@@ -336,3 +336,7 @@ html {
 
 .reveal .controls button {
   opacity: 0; }
+
+.reveal code {
+  background: transparent;
+  font-family: Menlo, Consolas, Lucida Console, monospace; }
