@@ -111,7 +111,7 @@
 
 <!-- OUTLINE -->
 
-        <section data-transition="fade-in slide-out">
+        <section data-transition="fade-in">
           <h2>The fundamental problems:</h2>
           <ul>
             <li class="fragment fade-down">The Cascade is opaque</li>
@@ -125,8 +125,25 @@
               <li>No one knows exactly what the cascade is.</li>
               <li>Not just an education problem, it's a design problem.</li>
               <li>There's been many other fantastic talks highlighting the practice hurdles of CSS</li>
-              <li>Refactoring, dependencies, dead-code elimination</li>
+              <li>Isolation, refactoring, dependencies, dead-code elimination</li>
               <li>Most things come down to specificity wars</li>
+              <li>When you're in war, good practice comes off the table.</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section data-transition="slide-out">
+          <h2>Outline:</h2>
+          <ul>
+            <li>The Cascade is opaque</li>
+            <li>Specificity war is hell</li>
+            <li>Lack of usual programming features</li>
+            <li>Specificity war IS HELL</li>
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>Let's just call this the outline</li>
             </ul>
           </aside>
         </section>
@@ -137,12 +154,22 @@
 
           <section data-transition="fade-in slide-out">
             <h1>The <span class="highlgiht">C</span> in CSS</h1>
+
+            <aside class="notes">
+              <ul>
+                <li>Let's start with the OG</li>
+                <li>Who here can tell me the cascade?</li>
+                <li>I didn't know before I wrote this talk</li>
+                <li>For the longest time, I confused the cascade with inheritence</li>
+                <li>The cascade tells the browser which rules take precedent based on <strong>origin</strong></li>
+              </ul>
+            </aside>
           </section>
 
           <section id="the-cascade" data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
             <h3>The cascade:</h3>
             <ol>
-              <li>Select element; filter only rules that apply</li>
+              <li>Select element; filter rules</li>
               <li>Cascade order <sup><a href="https://www.w3.org/TR/CSS21/cascade.html#cascade">W3C</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade">MDN</a></sup></li>
               <ol>
                 <li>User agent</li>
@@ -155,14 +182,36 @@
               </ol>
               <li>Specificity</li>
             </ol>
+
+            <aside class="notes">
+              <ul>
+                <li>When the browser is rendering out the HTML and CSS, it's going through every element and creating nodes in the DOM.</li>
+                <li>For every element,</li>
+                <li>Okay, who knew that off the top of their head?</li>
+              </ul>
+            </aside>
           </section>
 
           <section data-transition="fade-in slide-out">
             <h2>People are afraid of the cascade.</h2>
+
+            <aside class="notes">
+              <ul>
+                <li>This confusion causes the classic !important declarations everywhere.</li>
+                <li>So I had long, deep think about how the cascade could be better, and y'know what?</li>
+              </ul>
+            </aside>
           </section>
 
           <section data-transition="fade-in slide-out">
             <h2>The cascade is actually super useful.</h2>
+
+            <aside class="notes">
+              <ul>
+                <li>We need a way to resolve conflicting rules</li>
+                <li>We have an idea of where the problem is:</li>
+              </ul>
+            </aside>
           </section>
 
           <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
@@ -181,14 +230,35 @@
               </ol>
               <li>Specificity</li>
             </ol>
+
+            <aside class="notes">
+              <ul>
+                <li>Let's be real:</li>
+                <li>If we give developers a tool that makes their code the most important code, you can bet that someone is going to abuse it</li>
+                <li>Even when we tell everyone not to use it — it still pops up</li>
+                <li>So why do we use it?</li>
+              </ul>
+            </aside>
           </section>
 
           <section data-transition="fade-in slide-out">
             <h2>!important is for specifcity wars.</h2>
+
+            <aside class="notes">
+              <ul>
+                <li>We've all been there. We've got the best of the best practices hammered into our heads and as soon as there's a specificity war, the gloves come off and the !importants come out.</li>
+              </ul>
+            </aside>
           </section>
 
           <section data-transition="fade-in slide-out">
             <h2>If we solve specificity wars, weaken our need for !important</h2>
+
+            <aside class="notes">
+              <ul>
+                <li>Okay. Easy. Let's do it.</li>
+              </ul>
+            </aside>
           </section>
 
         </section>
@@ -206,11 +276,11 @@
           <section data-transition="fade-in slide-out">
             <h2>BEM vs Atomic CSS</h2>
             <ul>
-            <li class="fragment fade-down">Atomic CSS gets a bad rep from old school web devs because it's *weird*</li>
-            <li class="fragment fade-down">Give it a minute, and you'll find it's actually pretty awesome</li>
-            <li class="fragment fade-down">Problem is styling info in markup</li>
-            <li class="fragment fade-down">Also, lots of repetition as you call multiple classes</li>
-          </ul>
+              <li class="fragment fade-down">Atomic CSS gets a bad rep from old school web devs because it's *weird*</li>
+              <li class="fragment fade-down">Give it a minute, and you'll find it's actually pretty awesome</li>
+              <li class="fragment fade-down">Problem is styling info in markup</li>
+              <li class="fragment fade-down">Also, lots of repetition as you call multiple classes</li>
+            </ul>
           </section>
 
           <section data-transition="fade-in slide-out">
