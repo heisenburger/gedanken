@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>The Ideal Styling Language | CSS Meetup Nov 2k16</title>
+		<title>The Ideal Styling Language | CSSConfAu 2016</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/idk.css">
@@ -28,29 +28,51 @@
         <section class="title" data-transition="fade-in slide-out">
           <h1><span class="highlight">The Ideal Styling Language:</span><br/>
             A Gedankenexperiment</h1>
-          <h2>Serena Chen | CSS Meetup 2016</h2>
+          <h2>Serena Chen | CSSConfAu 2016</h2>
+
+          <aside class="notes">
+            Notess!
+          </aside>
         </section>
 
 <!-- INTRO; PROBLEM STATEMENT -->
 
 				<section data-transition="fade-in slide-out">
-          <h1>CSS: 1996 - 2016</h1>
+          <h2>CSS: 1996 - 2016</h2>
           <ul>
             <li class="fragment fade-down">The internet was made for <span class="highlight">documents</span></li>
             <li class="fragment fade-down">Global scope and the cascade made sense</li>
             <li class="fragment fade-down">Denizens of the web have changed. Web development has changed.</li>
           </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>I started making websites in the late 90s. It was a very, different world back then!</li>
+              <li>Denizens of the web have changed. Having your own stylesheet for your favourite websites wasn't unheard of.</li>
+              <li>Web development has changed. I'm pretty sure I spend more time now troubleshooting npm and the various javascript frameworks I use, than I do writing actual HTML or CSS.</li>
+              <li>DOM elements move around at will. The web is no longer static. It's a wild new world we live in.</li>
+            </ul>
+          </aside>
 				</section>
 
 				<section data-transition="fade-in slide-out">
-          <h1>Molding CSS to our needs</h1>
+          <h2>Molding CSS to our needs</h2>
           <ul>
             <li class="fragment fade-down">SASS allowed common programming patterns such as variables, mixins (i.e. functions) and extensions.</li>
             <li class="fragment fade-down">PostCSS made writing for multiple browsers more bearable</li>
             <li class="fragment fade-down">CSS Modules mean the end of global namespaces.</li>
-            <li class="fragment fade-down"><span class="highlight">We're increasingly bandaiding a solution</span></li>
+            <li class="fragment fade-down"><span class="highlight">We're increasingly tacking on more solutions</span></li>
             <li class="fragment fade-down">The core pain point of CSS is still the same:</li>
           </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>In the last 20 years, we've molded CSS to our needs</li>
+              <li>In 2006, SASS was released. Who remembers the first day they came across SASS?</li>
+              <li>PostCSS meant our poor fingers didn't have to type out every single browser prefix</li>
+              <li>CSS Modules: What's this? Encapsulation?? In CSS??? It truly is the future.</li>
+            </ul>
+          </aside>
         </section>
 
         <section data-transition="fade-in slide-out">
@@ -75,6 +97,38 @@
           <p>This is not necessarily a bad thing, <span class="fragment">except when it is.</span></p>
           <p class="fragment fade-down">Web owes its success to its accessibility.</p>
           <p class="fragment fade-down">This accessibility is made possible with clear separation between content, style, and logic.</p>
+
+          <aside class="notes">
+            <ul>
+              <li>Now just as an aside, I don't hate Javascript. It's the only scripting language we have.</li>
+              <li>You see, the web is successful because it is accessible.</li>
+              <li>You can access it from anything, anywhere. It degrades gracefully.</li>
+              <li>This separation of duties is crucial for accessibility, and hence the success of the web.</li>
+              <li>So while javascript is great for now, we have to be careful what direction we're heading in in the future, and always bear in mind that accessibility is compulsory, not a nice to have.</li>
+            </ul>
+          </aside>
+        </section>
+
+<!-- OUTLINE -->
+
+        <section data-transition="fade-in slide-out">
+          <h2>The fundamental problems:</h2>
+          <ul>
+            <li class="fragment fade-down">The Cascade is opaque</li>
+            <li class="fragment fade-down">Specificity war is hell</li>
+            <li class="fragment fade-down">Lack of usual programming features</li>
+            <li class="fragment fade-down">Specificity war IS HELL</li>
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>No one knows exactly what the cascade is.</li>
+              <li>Not just an education problem, it's a design problem.</li>
+              <li>There's been many other fantastic talks highlighting the practice hurdles of CSS</li>
+              <li>Refactoring, dependencies, dead-code elimination</li>
+              <li>Most things come down to specificity wars</li>
+            </ul>
+          </aside>
         </section>
 
 <!-- CASCADE -->
