@@ -49,7 +49,7 @@
                 <li>I started making websites in the late 90s. It was a very, different world back then!</li>
                 <li>Denizens of the web have changed. Having your own stylesheet for your favourite websites wasn't unheard of.</li>
                 <li>Web development has changed. I'm pretty sure I spend more time now troubleshooting npm and the various javascript frameworks I use, than I do writing actual HTML or CSS.</li>
-                <li>DOM elements move around at will. The web is no longer static. It's a wild new world we live in.</li>
+                <li>It's a wild new world we live in.</li>
               </ul>
             </aside>
           </section>
@@ -67,9 +67,12 @@
             <aside class="notes">
               <ul>
                 <li>In the last 20 years, we've molded CSS to our needs</li>
-                <li>In 2006, SASS was released. Who remembers the first day they came across SASS?</li>
+                <li>In 2006, SASS was released. And consequently blew all of our minds. Who remembers the first day they came across SASS? Changed my life.</li>
                 <li>PostCSS meant our poor fingers didn't have to type out every single browser prefix</li>
                 <li>CSS Modules: What's this? Encapsulation?? In CSS??? It truly is the future.</li>
+                <li>And I'm not even mentioning the five bajillion different namespacing conventions that are out there.</li>
+                <li>But you might see a pattern here. We're increaasingly tacking on more solutions, more conventions, more toolsets</li>
+                <li>It's taking up mental capacity that should be set aside for *actually making websites*</li>
               </ul>
             </aside>
           </section>
@@ -87,21 +90,19 @@
             <h2>Bad for maintainance?<br>Bad at scale?</h2>
             <ul>
               <li class="fragment fade-down">Lack of scoping features <span class="ghost">&rarr; Global scope, leaky code &rarr; specificity wars</span></li>
-              <li class="fragment fade-down">Confusing behaviour specificity, inheritance and the cascade <span class="ghost">&rarr; specificity wars</span></li>
-              <li class="fragment fade-down">Dead code sticks around <span class="ghost">&rarr; creates habits of high-specificity &rarr; specificity wars</span></li>
+              <li class="fragment fade-down">Confusing behaviour around specificity, inheritance and the cascade <span class="ghost">&rarr; specificity wars</span></li>
               <li class="fragment fade-down">...</li>
             </ul>
 
             <aside class="notes">
               <ul>
                 <li>What does this mean?</li>
-                <li>It means lack of scope</li>
-                <li>It means confusion around which rules apply and which don't.</li>
+                <li>It means lack of scope. Global scope might be fine for a weekend project, but it's really going to get unbearable on a large project with dozens of devs and hundreds of views.</li>
+                <li>It means confusion around which rules apply and which don't. How am I supposed to maintain something if I don't know what's going to happen if I change the code?</li>
+                <li>The list goes on:</li>
                 <li>It means dead code is hidden and lives around forever</li>
-                <li>And all of this, means working with other people, including your past self, is really, really hard.</li>
+                <li>It means working with other people, including your past self, is really, really hard.</li>
                 <li>This is a very incomplete list</li>
-                <li>But I think that the first two are the core problems for maintainable css at scale</li>
-                <li>And if you look closely, you can distill a common thread</li>
               </ul>
             </aside>
           </section>
@@ -109,16 +110,18 @@
           <section data-transition="slide-out">
             <h2>Bad for maintainance?<br>Bad at scale?</h2>
             <ul>
-              <li class="highlight">Lack of scoping features <span class="fragment fade-down">&rarr; Global scope, leaky code &rarr; specificity wars</span></li>
-              <li class="highlight">Confusing behaviour specificity, inheritance and the cascade <span class="fragment fade-down">&rarr; specificity wars</span></li>
-              <li >Dead code sticks around</li>
+              <li><span class="highlight">Lack of scoping features</span> <span class="fragment fade-down">&rarr; Global scope, leaky code &rarr; specificity wars</span></li>
+              <li><span class="highlight">Confusing behaviour around specificity, inheritance and the cascade</span> <span class="fragment fade-down">&rarr; specificity wars</span></li>
               <li>...</li>
             </ul>
 
             <aside class="notes">
               <ul>
+                <li>But I think that these distill the core problems for maintainable css at scale</li>
+                <li>And if you look closely, you can see a common symptom</li>
                 <li>Lack of scoping features leads to a global scope, leads to leaky code, inheritance problems, and specificity increases</li>
                 <li>Confusing behaviour around how specificity, inheritance and the cascade works leads directly to specificity wars</li>
+                <li>Specificity wars is the symptom of the worst parts of CSS.</li>
               </ul>
             </aside>
           </section>
@@ -129,8 +132,8 @@
             <aside class="notes">
               <ul>
                 <li>If we're talking about an optimal styling language, we would do very well to eliminate specificity wars, once and for all.</li>
-                <li>It doesn't matter how much good practice you know — when you're in a specificity war, good practice goes out the window</li>
-                <li>Since this is such a core problem with CSS, since this touches on everything from the cascade, to selectors, to scope, to inheritance, solving this will solve a good chunk of our most fundamental CSS strifes.</li>
+                <li>It doesn't matter how much good practice you know — when you're in a specificity war, good practice goes out the window. We've all been there. We've all done that.</li>
+                <li>Since this is such a core problem with CSS, since this touches on everything from the cascade, to selectors, to scope, to inheritance, solving this should solve a good chunk of our most fundamental CSS strifes.</li>
                 <li>So now we know what our ideal styling language should solve, let's embark on our thought experiment...</li>
               </ul>
             </aside>
@@ -166,6 +169,7 @@
             <p>This is not necessarily a bad thing, <span class="fragment">except when it is.</span></p>
             <p class="fragment fade-down">Web owes its success to its accessibility.</p>
             <p class="fragment fade-down">This accessibility is made possible with clear separation between content, style, and logic.</p>
+            <p class="fragment fade-down">This accessibility is compulsory, not a nice to have.</p>
 
             <aside class="notes">
               <ul>
@@ -687,6 +691,8 @@
             <aside class="notes">
               <ul>
                 <li>But we can fix that by directly setting the parent it overrides</li>
+                <li>You can never declare your code to be the most important, only how important it is relative to the code that's already written</li>
+                <li>Someone else can always come along and override your CSS if they need to</li>
               </ul>
             </aside>
           </section>
@@ -758,8 +764,8 @@
                 <li>I was wrong.</li>
                 <li>A lot of the strange things that CSS does is based in good decisions and consideration for wider contexts than just web development.</li>
                 <li>So maybe it's time to reignite our CSS love?</li>
-                <li>Maybe, after all of our struggle and over-tooling and band-aiding, we can just appreciate CSS for what it is</li>
-                <li>And we can make sure it keeps working, for the future of the web.</li>
+                <li>Maybe, after all of our struggle and over-tooling and band-aiding, we can just appreciate CSS for what it is, and what it does</li>
+                <li>And then we can make sure it keeps working, for us, and for the future of the web.</li>
               </ul>
             </aside>
           </section>
