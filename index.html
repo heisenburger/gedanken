@@ -580,13 +580,169 @@
             </aside>
           </section>
 
+          <section data-transition="fade-in slide-out">
+            <h2>Scoping our CSS</h2>
+            <ul>
+              <li class="fragment fade-down">Scoping in CSS is looking to be straightforward</li>
+              <li class="fragment fade-down">CSS4 Selector spec introduces :scope</li>
+              <li class="fragment fade-down">all: initial resets all CSS properties to their browser defaults</li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>As it turns out, scoping in CSS is looking to be relatively straightforward.</li>
+                <li>The upcoming CSS4 Selector spec introduces a :scope pseudo-class so set local scope</li>
+                <li>To protect your scope from inheriting anything unwanted, you can use all: initial to reset</li>
+                <li>And if that's a bit too hardcore for you you can just reset specific properties</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>Hostile environments</h2>
+            <ul>
+              <li class="fragment fade-down">Real problem isn't so much our scope as it is shared scope</li>
+              <li class="fragment fade-down">You're probably familiar with not being able to control markup or CSS</li>
+              <li class="fragment fade-down">No amount of well defined scope or well crafted selectors will stop someone from directly targeting your element</li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>Real problem isn't so much our scope as it is shared scope</li>
+                <li>Hostile environments like if you're making an override for a theme, or customising a 3rd party app that doesn't let you control the markup, or their CSS</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>:(</h2>
+            <span>What do we do?</span>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>The C in CSS</h2>
+
+            <aside class="notes">
+              <ul>
+                <li>Hey, remember this?</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h3>The cascade:</h3>
+            <ol>
+                <li>User agent</li>
+                <li>User</li>
+                <li>Author</li>
+                <li>CSS Animations <em>(doesn't cascade)</em></li>
+            </ol>
+
+            <aside class="notes">
+              <ul>
+                <li>Remember this?</li>
+                <li>What if we just did... this?</li>
+              </ul>
+            </aside>
+          </section>
+        
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h3>The cascade:</h3>
+            <ol>
+              <li>User agent</li>
+              <li>User</li>
+              <li>Author 1 <span class="fragment fade-down">- Framework</span></li>
+              <li>Author 2 <span class="fragment fade-down">- Third party provider</span></li>
+              <li>Author 3 <span class="fragment fade-down">- In-house dev team</span></li>
+              <li>...</li>
+              <li>CSS Animations <em>(doesn't cascade)</em></li>
+            </ol>
+
+            <aside class="notes">
+              <ul>
+                <li>What if a framework's rules sit here?</li>
+                <li>The app provider's rules sit here?</li>
+                <li>And yours sits here?</li>
+                <li>And I know what some of you are already thinking, this looks it could very easily become this</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <span>z-index: 9999999;</span>
+          </section>
+
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h3>The cascade:</h3>
+            <ol>
+              <li>User agent</li>
+              <li>User</li>
+              <li>Framework {parent: null}</li>
+              <li>Blog_theme {parent: Framework}</li>
+              <li>Blog_theme_yours {parent: Blog_theme}, <br>Blog_theme_theirs {parent: Blog_theme}</li>
+              <li>...</li>
+              <li>CSS Animations <em>(doesn't cascade)</em></li>
+            </ol>
+
+            <aside class="notes">
+              <ul>
+                <li>But we can fix that by directly setting the parent it overrides</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>Setting the cascade</h2>
+            <ul>
+              <li class="fragment fade-down">Yes, can be abused, but at least it works!</li>
+              <li class="fragment fade-down">Encourages developers to interact with the cascade</li>
+              <li class="fragment fade-down">Conquering fear around the unknown</li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>Yes, it's not perfect, it can totally be abused</li>
+                <li>But hey- at least it works every time! Not like !importants</li>
+                <li>It encourages devs to interact with the cascade - therefore educate themseles about the cascade</li>
+                <li>We get rid of that fear around the unknown. Now you know exactly where in the cascade you sit, and why.</li>
+              </ul>
+            </aside>
+          </section>
+
         </section>
 
 <!-- SUMMARY -->
 
         <section data-transition="fade-in slide-out">
           <section data-transition="fade-in slide-out">
-            <h1>What does this mean for us?</h1>
+            <h1>What does it mean for us?</h1>
+            <ul>
+              <li class="fragment fade-down">The cascade is powerful. It's being ignored. Stop ignoring it.</li>
+              <li class="fragment fade-down">CSS4 Spec is exciting! --variables, :scope... play with it!</li>
+              <li class="fragment fade-down">SASS 3.1 supports first class functions</li>
+              <li class="fragment fade-down">BEM vs Atomic is like tabs vs spaces. Pros and cons. Try both out. Don't choose one blindly.</li>
+              <li class="fragment fade-down">Separation of content, style and logic is crucial for the internet's survival.</li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>The cascade is powerful.</li>
+                <li>CSS4 is exciting! Most of it is already implemented in Chrome and Firefox so unless you need to support IE/Edge, go nuts!</li>
+                <li>I would be really intrigued to see what CSS could look like as a fully fledged functional programming language, but we're not there yet. So play around! Explore.</li>
+                <li>BEM v Atomic</li>
+                <li>Separation is crucial. Accessibility is crucial. This is something we all need to keep in mind for the future of web development</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>But the main thing I learned...</h2>
+
+            <aside class="notes">
+              <ul>
+                <li>But the main thing I learned, while going on this long journey of thought experiments and wild ideas?</li>
+              </ul>
+            </aside>
           </section>
         </section>
 
@@ -595,6 +751,25 @@
         <section data-transition="fade-in slide-out">
           <section data-transition="fade-in slide-out">
             <h1>CSS is not dead.</h1>
+
+            <aside class="notes">
+              <ul>
+                <li>I started this thinking the massive problems around CSS must mean the need for massive change.</li>
+                <li>I was wrong.</li>
+                <li>A lot of the strange things that CSS does is based in good decisions and consideration for wider contexts than just web development.</li>
+                <li>So maybe it's time to reignite our CSS love?</li>
+                <li>Maybe, after all of our struggle and over-tooling and band-aiding, we can just appreciate CSS for what it is</li>
+                <li>And we can make sure it keeps working, for the future of the web.</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+<!-- THANKS -->
+
+        <section data-transition="fade-in slide-out">
+          <section data-transition="fade-in slide-out">
+            <h1 class="display"><em>Thanks!</em></h1>
           </section>
         </section>
 
