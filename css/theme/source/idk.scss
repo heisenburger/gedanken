@@ -32,7 +32,7 @@ $heading4Size: 2.5rem;
 
 $backgroundColor: #fdfdfd;
 $linkColor: #a58e19;
-$linkColorHover: lighten( $linkColor, 20% );
+$linkColorHover: lighten( $linkColor, 30% );
 $selectionColor: $mainColor;
 $selectionBackgroundColor: lighten($linkColor, 30%);
 
@@ -49,6 +49,7 @@ $orange: chocolate;
 .highlight {
   background-color: lighten($linkColor,30%);
   box-shadow: -0.2em 0 0 lighten($linkColor,30%),0.2em 0 0 lighten($linkColor,30%);
+  color: #000000;
 }
 
 .accent {

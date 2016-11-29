@@ -1,0 +1,736 @@
+        <section data-transition="fade-in slide-out">
+          <section data-transition="fade-in slide-out">
+            <h1></h1>
+
+            <aside class="notes">
+              <ul>
+                
+              </ul>
+            </aside>
+          </section>
+
+
+
+       <section class="title" data-transition="fade-in slide-out">
+          <h1><span class="highlight">The Ideal Styling Language:</span><br/>
+            A Gedankenexperiment</h1>
+          <h2>Serena Chen | CSSConfAu 2016</h2>
+
+          <aside class="notes">
+            Notess!
+          </aside>
+        </section>
+
+<!-- INTRO; PROBLEM STATEMENT -->
+
+        <section data-transition="fade-in slide-out">
+          <h2>CSS: 1996 - 2016</h2>
+          <ul>
+            <li class="fragment fade-down">The internet was made for <span class="highlight">documents</span></li>
+            <li class="fragment fade-down">Global scope and the cascade made sense</li>
+            <li class="fragment fade-down">Denizens of the web have changed. Web development has changed.</li>
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>I started making websites in the late 90s. It was a very, different world back then!</li>
+              <li>Denizens of the web have changed. Having your own stylesheet for your favourite websites wasn't unheard of.</li>
+              <li>Web development has changed. I'm pretty sure I spend more time now troubleshooting npm and the various javascript frameworks I use, than I do writing actual HTML or CSS.</li>
+              <li>DOM elements move around at will. The web is no longer static. It's a wild new world we live in.</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h2>Molding CSS to our needs</h2>
+          <ul>
+            <li class="fragment fade-down">SASS allowed common programming patterns such as variables, mixins (i.e. functions) and extensions.</li>
+            <li class="fragment fade-down">PostCSS made writing for multiple browsers more bearable</li>
+            <li class="fragment fade-down">CSS Modules mean the end of global namespaces.</li>
+            <li class="fragment fade-down"><span class="highlight">We're increasingly tacking on more solutions</span></li>
+            <li class="fragment fade-down">The core pain point of CSS is still the same:</li>
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>In the last 20 years, we've molded CSS to our needs</li>
+              <li>In 2006, SASS was released. Who remembers the first day they came across SASS?</li>
+              <li>PostCSS meant our poor fingers didn't have to type out every single browser prefix</li>
+              <li>CSS Modules: What's this? Encapsulation?? In CSS??? It truly is the future.</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3>It's hard to write <span class="highlight">maintainable</span> CSS at <span class="highlight">scale</span>.</h3>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h3 class="display" align="left"><em>Let’s indulge in a thought experiment...</em></h3>
+        </section>
+
+<!-- TITLE CARD -->
+
+        <section data-transition="fade-in slide-out">
+          <h2 class="display" align="left"><span class="highlight">What would CSS look like if it were written today?</span></h2>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <p><strike>(Probably JavaScript)</strike></p>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <p>This is not necessarily a bad thing, <span class="fragment">except when it is.</span></p>
+          <p class="fragment fade-down">Web owes its success to its accessibility.</p>
+          <p class="fragment fade-down">This accessibility is made possible with clear separation between content, style, and logic.</p>
+
+          <aside class="notes">
+            <ul>
+              <li>Now just as an aside, I don't hate Javascript. It's the only scripting language we have.</li>
+              <li>You see, the web is successful because it is accessible.</li>
+              <li>You can access it from anything, anywhere. It degrades gracefully.</li>
+              <li>This separation of duties is crucial for accessibility, and hence the success of the web.</li>
+              <li>So while javascript is great for now, we have to be careful what direction we're heading in in the future, and always bear in mind that accessibility is compulsory, not a nice to have.</li>
+            </ul>
+          </aside>
+        </section>
+
+<!-- OUTLINE -->
+
+        <section data-transition="fade-in">
+          <h2>The fundamental problems:</h2>
+          <ul>
+            <li class="fragment fade-down">The Cascade is opaque</li>
+            <li class="fragment fade-down">Specificity war is hell</li>
+            <li class="fragment fade-down">Lack of usual programming features</li>
+            <li class="fragment fade-down">Specificity war IS HELL</li>
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>No one knows exactly what the cascade is.</li>
+              <li>Not just an education problem, it's a design problem.</li>
+              <li>There's been many other fantastic talks highlighting the practice hurdles of CSS</li>
+              <li>Isolation, refactoring, dependencies, dead-code elimination</li>
+              <li>Most things come down to specificity wars</li>
+              <li>When you're in war, good practice comes off the table.</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section data-transition="slide-out">
+          <h2>Outline:</h2>
+          <ul>
+            <li>The Cascade is opaque</li>
+            <li>Specificity war is hell</li>
+            <li>Lack of usual programming features</li>
+            <li>Specificity war IS HELL</li>
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>Let's just call this the outline</li>
+            </ul>
+          </aside>
+        </section>
+
+<!-- CASCADE -->
+
+        <section data-transition="fade-in slide-out">
+
+          <section data-transition="fade-in slide-out">
+            <h1>The <span class="highlgiht">C</span> in CSS</h1>
+
+            <aside class="notes">
+              <ul>
+                <li>Let's start with the OG</li>
+                <li>Who here can tell me the cascade?</li>
+                <li>I didn't know before I wrote this talk</li>
+                <li>For the longest time, I confused the cascade with inheritence</li>
+                <li>The cascade tells the browser which rules take precedent based on <strong>origin</strong></li>
+              </ul>
+            </aside>
+          </section>
+
+          <section id="the-cascade" data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h3>The cascade:</h3>
+            <ol>
+              <li>Select element; filter rules</li>
+              <li>Cascade order <sup><a href="https://www.w3.org/TR/CSS21/cascade.html#cascade">W3C</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade">MDN</a></sup></li>
+              <ol>
+                <li>User agent</li>
+                <li>User agent <em>!important</em></li>
+                <li>User</li>
+                <li>Author</li>
+                <li>CSS Animations <em>(doesn't cascade)</em></li>
+                <li>Author <em>!important</em></li>
+                <li>User <em>!important</em></li>
+              </ol>
+              <li>Specificity</li>
+            </ol>
+
+            <aside class="notes">
+              <ul>
+                <li>When the browser is rendering out the HTML and CSS, it's going through every element and creating nodes in the DOM.</li>
+                <li>For every element,</li>
+                <li>Okay, who knew that off the top of their head?</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>People are afraid of the cascade.</h2>
+
+            <aside class="notes">
+              <ul>
+                <li>This confusion causes the classic !important declarations everywhere.</li>
+                <li>So I had long, deep think about how the cascade could be better, and y'know what?</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>The cascade is actually super useful.</h2>
+
+            <aside class="notes">
+              <ul>
+                <li>We need a way to resolve conflicting rules</li>
+                <li>We have an idea of where the problem is:</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h3>The cascade:</h3>
+            <ol>
+              <li>Select element; filter only rules that apply</li>
+              <li>Cascade order <sup><a href="https://www.w3.org/TR/CSS21/cascade.html#cascade">W3C</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade">MDN</a></sup></li>
+              <ol>
+                <li>User agent</li>
+                <li class="accent">User agent <em>!important</em></li>
+                <li>User</li>
+                <li>Author</li>
+                <li>CSS Animations <em>(doesn't cascade)</em></li>
+                <li class="accent">Author <em>!important</em></li>
+                <li class="accent">User <em>!important</em></li>
+              </ol>
+              <li>Specificity</li>
+            </ol>
+
+            <aside class="notes">
+              <ul>
+                <li>Let's be real:</li>
+                <li>If we give developers a tool that makes their code the most important code, you can bet that someone is going to abuse it</li>
+                <li>Even when we tell everyone not to use it — it still pops up</li>
+                <li>So why do we use it?</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>!important is for specificity wars.</h2>
+
+            <aside class="notes">
+              <ul>
+                <li>We've all been there. We've got the best of the best practices hammered into our heads and as soon as there's a specificity war, the gloves come off and the !importants come out.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>If we solve specificity wars, weaken our need for !important</h2>
+
+            <aside class="notes">
+              <ul>
+                <li>Okay. Easy. Let's do it.</li>
+              </ul>
+            </aside>
+          </section>
+
+        </section>
+
+<!-- SELECTORS -->
+
+        <section data-transition="fade-in slide-out">
+          <section data-transition="fade-in slide-out">
+            <h1>Selectors</h1>
+            <span class="fragment fade-down">are hard to write good</span>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>BEM vs Atomic CSS</h2>
+            <ul>
+              <li class="fragment fade-down">Atomic CSS gets a bad rep from old school web devs because it's *weird*</li>
+              <li class="fragment fade-down">Give it a minute, and you'll find it's actually pretty awesome</li>
+              <li class="fragment fade-down">Problem is styling info in markup</li>
+              <li class="fragment fade-down">Also, lots of repetition as you call multiple classes</li>
+            </ul>
+
+            <!-- TODO: Make example slides to show how BEM and Atomic CSS works -->
+
+            <aside class="notes">
+              <ul>
+                <li>We're gonna start by looking at two differing schools of thought when it comes to naming selectors</li>
+                <li></li>
+                <li>BEM stands for Block Element Modifier</li>
+                <li>It's a namespacing convention to help isolate your CSS</li>
+                <li>One class per component</li>
+                <li></li>
+                <li>Atomic CSS is the idea that classes should be reused</li>
+                <li></li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>DRY - but HTML and CSS are fundamentally linked.</h2>
+            <p class="fragment fade-down">Consider a situation where you have no control over the markup. And the markup is bad. What is your CSS going to look like?</p>
+            <p class="fragment fade-down">Bad.</p>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h3>We need a language robust enough to not force us in a corner of specificity hacks when we can't control the markup</h3>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h3>The dichotomy between <br><span class="highlight">"best practice"</span> and <span class="highlight">efficiency</span></h3>
+          </section>
+
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h2>How browsers filter CSS</h2>
+            <pre>
+              <code class="fragment fade-down">
+                .foo .child {}
+              </code>
+              <code>
+                p > * {}
+
+                div[hidden="true"] {}
+
+                .app .wrapper p > button {}
+
+                #footer {}
+              </code>
+            </pre>
+            <span class="fragment fade-down"><strong>The descendent selector is the most expensive<sup><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS">MDN</a></sup>.</strong></span>
+
+            <aside class="notes">
+              <ul>
+                <li>Browsers parse CSS from right to left</li>
+                <li>When it comes to writing efficient selectors, specific things like IDs are ideal</li>
+                <li>General selectors like element-level ones are very inefficient</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h3>The dichotomy between <br>"best practice" and efficiency</h3>
+            <ul>
+              <li class="fragment fade-down">Best practice selectors err on the side of generality: <br><strong>never use #id</strong></li>
+              <li class="fragment fade-down">Efficiency errs on the side of specificity: <br><strong>#ids are the bomb</strong></li>
+              <li class="fragment fade-down">What do we do?</li>
+            </ul>
+          </section>
+
+        </section>
+
+<!-- FUNCTIONS -->
+
+        <section data-transition="fade-in slide-out">
+
+          <section data-transition="fade-in slide-out">
+            <h1>Functions!</h1>
+            <h5>Here's where things get interesting.</h5>
+          </section>
+
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h2>Mixins in SASS</h2>
+            <pre>
+              <code>
+                @mixin dark-background($color){
+                  background-color: $color;
+                  color: white;
+                  text-shadow: 0 0 0.5rem black;
+                  font-weight: 700;
+                }
+
+                .box {
+                  @include dark-background(black);
+                }
+
+                .different-box {
+                  @include dark-background(blue);
+                }
+              </code>
+            </pre>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h3>Mixins in your precompiler means less repetition in development, but they become so much more powerful in raw CSS.</h3>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h3>Remember the BEM vs Atomic problem?</h3>
+            <ul>
+              <li>BEM is inelegant, clunky and repetitive</li>
+              <li>Atomic means holding styling information in semantic markup - bad for separation of duties</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h2>But what happens when we put it in raw CSS?</h2>
+            <pre>
+              <code>
+                @function button($color) {
+                  padding: 1em;
+                  margin: 0 1em;
+                  background-color: $color;
+                }
+
+                @function display-font {
+                  font-family: 'Playfair Display';
+                  letterspacing: -0.01em;
+                  line-height: 1em;
+                }
+
+                .block--element {
+                  function: button(blue);
+                  function: display-font;
+                }
+              </code>
+            </pre>
+          </section>
+
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h2>Come at me, efficiency !</h2>
+            <pre>
+              <code>
+                @function button($color) {
+                  padding: 1em;
+                  margin: 0 1em;
+                  background-color: $color;
+                }
+
+                @function display-font {
+                  font-family: 'Playfair Display';
+                  letterspacing: -0.01em;
+                  line-height: 1em;
+                }
+
+                #this-specific-element {
+                  function: button(blue);
+                  function: display-font;
+                }
+              </code>
+            </pre>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h4>No styling in markup? <span class="fragment fade-down">Check.</span></h4>
+            <h4 class="fragment fade-down">Ease of prototyping? <span class="fragment fade-down">Check.</span></h4>
+            <h4 class="fragment fade-down">No specificity wars? <span class="fragment fade-down">Nearly there...</span></h4>
+
+            <aside class="notes">
+              <ul>
+                <li>No compiled repetition of code</li>
+                <li>We've solved the selector crafting problem with native CSS functions</li>
+                <li>We haven't solved a massive contributor to specificity wars, and that is</li>
+              </ul>
+            </aside>
+          </section>
+
+        </section>
+
+<!-- SCOPE AND INHERITANCE -->
+
+        <section data-transition="fade-in slide-out">
+
+          <section data-transition="fade-in slide-out">
+            <h1>Scope and Inheritance</h1>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h3>BEM and other namespacing conventions are trying to define a scope</h3>
+          </section> 
+
+          <section data-transition="fade-in slide-out">
+            <h3>CSS4 Selector Module introduces a :scope selector</h3>
+            <p class="fragment fade-down">It's relatively easy to contain styles within your component</p>
+            <p class="fragment fade-down">But what about inheriting styles you never knew about?</p>
+            <p class="fragment fade-down">Recall that hostile environment when you couldn't control the markup. Or the CSS.</p>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h3>We need a reset property.</h3>
+            <p class="fragment fade-down">In everything except IE/Edge, you can <strong>all: initial</strong> to protect yourself from inheritance</p>
+            <p class="fragment fade-down">Inheritance itself is rather opaque.</p>
+
+            <aside class="notes">
+              <ul>
+                <li>Just as the cascade is opaque, so is inheritance.</li>
+                <li>Everyday we're essentially going on gut feeling what will and won't be inherited.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section id="inheritance" data-transition="fade-in" class="darkbg" data-background-color="#2b2b2b">
+            <h3>Inherited properties</h3>
+            <ul class="small-text">
+              <li>azimuth</li>
+              <li>border-*</li>
+              <li>color</li>
+              <li>direction</li>
+              <li>elevation</li>
+              <li>empty-cells</li>
+              <li>font-*</li>
+              <li>letter-spacing</li>
+              <li>line-height</li>
+              <li>list-style-*</li>
+              <li>orphans</li>
+              <li>pitch-*</li> 
+              <li>stress</li>
+              <li>text-*</li>
+              <li>visibility</li>
+              <li>voice-family</li>
+              <li>volume</li>
+              <li>white-space</li>
+              <li>widows</li>
+              <li>word-spacing</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade-in" class="darkbg" data-background-color="#2b2b2b">
+            <h3>Inherited properties</h3>
+            <ul class="small-text">
+              <li>azimuth</li>
+              <li>border-*</li>
+              <li class="accent">color</li>
+              <li>direction</li>
+              <li>elevation</li>
+              <li>empty-cells</li>
+              <li class="accent">font-*</li>
+              <li class="accent">letter-spacing</li>
+              <li class="accent">line-height</li>
+              <li class="accent">list-style-*</li>
+              <li class="accent">orphans</li>
+              <li>pitch-*</li> 
+              <li>stress</li>
+              <li class="accent">text-*</li>
+              <li class="accent">visibility</li>
+              <li>voice-family</li>
+              <li>volume</li>
+              <li class="accent">white-space</li>
+              <li class="accent">widows</li>
+              <li class="accent">word-spacing</li>
+            </ul>
+
+            <ul style="position: absolute; right:0rem; list-style: none;">
+              <li class="accent">decorative</li>
+              <li class="accent-2 ghost">settings</li>
+              <li class="accent-3 ghost">aural decoration</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade-in" class="darkbg" data-background-color="#2b2b2b">
+            <h3>Inherited properties</h3>
+            <ul class="small-text">
+              <li>azimuth</li>
+              <li class="accent-2">border-*</li>
+              <li class="accent">color</li>
+              <li class="accent-2">direction</li>
+              <li>elevation</li>
+              <li class="accent-2">empty-cells</li>
+              <li class="accent">font-*</li>
+              <li class="accent">letter-spacing</li>
+              <li class="accent">line-height</li>
+              <li class="accent">list-style-*</li>
+              <li class="accent">orphans</li>
+              <li>pitch-*</li> 
+              <li>stress</li>
+              <li class="accent">text-*</li>
+              <li class="accent">visibility</li>
+              <li>voice-family</li>
+              <li>volume</li>
+              <li class="accent">white-space</li>
+              <li class="accent">widows</li>
+              <li class="accent">word-spacing</li>
+            </ul>
+
+            <ul style="position: absolute; right:0rem; list-style: none;">
+              <li class="accent">decorative</li>
+              <li class="accent-2">settings</li>
+              <li class="accent-3 ghost">aural decoration</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade-in" class="darkbg" data-background-color="#2b2b2b">
+            <h3>Inherited properties</h3>
+            <ul class="small-text">
+              <li class="accent-3">azimuth</li>
+              <li class="accent-2">border-*</li>
+              <li class="accent">color</li>
+              <li class="accent-2">direction</li>
+              <li class="accent-3">elevation</li>
+              <li class="accent-2">empty-cells</li>
+              <li class="accent">font-*</li>
+              <li class="accent">letter-spacing</li>
+              <li class="accent">line-height</li>
+              <li class="accent">list-style-*</li>
+              <li class="accent">orphans</li>
+              <li class="accent-3">pitch-*</li> 
+              <li class="accent-3">stress</li>
+              <li class="accent">text-*</li>
+              <li class="accent">visibility</li>
+              <li class="accent-3">voice-family</li>
+              <li class="accent-3">volume</li>
+              <li class="accent">white-space</li>
+              <li class="accent">widows</li>
+              <li class="accent">word-spacing</li>
+            </ul>
+
+            <ul style="position: absolute; right:0rem; list-style: none;">
+              <li class="accent">decorative</li>
+              <li class="accent-2">settings</li>
+              <li class="accent-3">aural decoration</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>Separation of concerns</h2>
+            <h3 class="fragment fade-down">Inherit from parent</h3>
+            <ul>
+              <li class="fragment fade-down">Settings</li>
+              <li class="fragment fade-down">Typography</li>
+              <li class="fragment fade-down">Aural</li>
+            </ul>
+            <h3 class="fragment fade-down">Don't inherit</h3>
+            <ul>
+              <li class="fragment fade-down">Layout</li>
+              <li class="fragment fade-down">Decoration</li>
+            </ul> 
+          </section>
+
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h2>Explicitly separating Inherit, Layout and Decoration</h2>
+            <pre>
+              <code>
+                #foo {
+                  &inherit {
+                    function: article-font;
+                  }
+                  &layout {
+                    display: block;
+                    position: absolute;
+                    function: container(320px);
+                  }
+                  &decoration {
+                    color: pink;
+                    function: random-background;
+                  }
+                }
+              </code>
+            </pre>
+          </section>
+
+          <section data-transition="fade-in slide-out">
+            <h2>Separation of concerns</h2>
+            <ul>
+              <li class="fragment fade-down">Separate properties that propagate down</li>
+              <li class="fragment fade-down">Visually clear</li>
+              <li class="fragment fade-down">Makes theming easier</li>
+              <li class="fragment fade-down">A note on performance: reflows are much more expensive than repaints. This could make performance debugging clearer too.</li>
+              <li class="fragment fade-down">Async loading</li>
+            </ul>
+          </section>
+
+          <!-- <section data-transition="fade-in slide-out">
+            <h2>Scope and Inheritance</h2>
+            <ul>
+              <li class="fragment fade-down">Define new scope with :scope</li>
+              <li class="fragment fade-down">Protect your scope with all:inital</li>
+              <li class="fragment fade-down">Clarify inheritance issues by separating out settings, layout and decoration</li>
+              <li class="fragment fade-down">Scoping magic wands away specificity wars</li>
+            </ul>
+          </section> -->
+
+        </section>
+
+<!-- THE STORY SO FAR -->
+
+        <section data-transition="fade-in slide-out">
+          <h1>Taking on Specificity Wars</h1>
+          <ul>
+            <li class="fragment fade-down"><strike>Functions making for nice selectors</strike></li>
+            <li class="fragment fade-down"><strike>Scope defined with :scope</strike></li>
+            <li class="fragment fade-down"><strike>Protection from rogue inheritence with all: initial</strike></li>
+            <li class="fragment fade-down"><strike>Bonus: Seperation of concerns</strike></li>
+            <li class="fragment fade-down">Hostile environments</li>
+          </ul>
+        </section>
+
+<!-- BACK TO THE CASCADE -->
+        
+        <section data-transition="fade-in slide-out">
+          <section data-transition="fade-in slide-out">
+            <h1>Back to the cascade</h1>
+            <span><em>(Hello Darkness my old friend... plays in background)</em></span>
+          </section>
+
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h3>The cascade:</h3>
+            <ol>
+              <li>User agent</li>
+              <li>User</li>
+              <li>Author</li>
+              <li>CSS Animations <em>(doesn't cascade)</em></li>
+            </ol>
+
+            <aside class="notes">
+              <ul>
+                <li>Let's assume that we've solved so many problems we don't need important anymore</li>
+              </ul>
+            </aside>
+          </section>
+        
+          <section data-transition="fade-in slide-out" class="darkbg" data-background-color="#2b2b2b">
+            <h3>The cascade:</h3>
+            <ol>
+              <li>User agent</li>
+              <li>User</li>
+              <li>Author 1 <span class="fragment fade-down">- Framework</span></li>
+              <li>Author 2 <span class="fragment fade-down">- Third party provider</span></li>
+              <li>Author 3 <span class="fragment fade-down">- In-house dev team</span></li>
+              <li>...</li>
+              <li>CSS Animations <em>(doesn't cascade)</em></li>
+            </ol>
+
+            <aside class="notes">
+              <ul>
+                <li>Let's assume that we've solved so many problems we don't need important anymore</li>
+              </ul>
+            </aside>
+          </section>
+
+        </section>
+
+<!-- WHAT DOES THIS MEAN FOR CSS NOW? -->
+
+<!-- WRAP UP -->
+
+        <section data-transition="fade-in slide-out">
+          <h1>Wrap up</h1>
+          <ul>
+              <li class="fragment fade-down">We're not there yet.</li>
+              <li class="fragment fade-down">SASS 3.1 has first class functions</li>
+              <li class="fragment fade-down">CSS4 have new selectors (:scope!)</li>
+              <li class="fragment fade-down">Specificity wars are solved, but could be more elegant</li>
+            </ul>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h1>CSS is not dead.</h1>
+        </section>
+
+        <section data-transition="fade-in slide-out">
+          <h1>How will you write for the future?</h1>
+        </section>
