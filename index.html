@@ -30,7 +30,16 @@
         <section class="title" data-transition="fade-in slide-out">
           <h1><span class="highlight">The Ideal Styling Language:</span><br/>
             A Gedankenexperiment</h1>
-          <h2>Serena Chen | CSSConfAu 2016</h2>
+          <h2>@Sereeena | CSSConfAu 2016</h2>
+
+          <aside class="notes">
+              <ul>
+                <li>Hello! Thanks so much for that lovely intro,</li>
+                <li>Today we're going to be embarking on a little thought experiment</li>
+                <li>How our ideal version of CSS might look like.</li>
+                <li>But before we do that, let's go through some background</li>
+              </ul>
+            </aside>
         </section>
 
 <!-- BACKGROUND -->
@@ -41,14 +50,17 @@
             <ul>
               <li class="fragment fade-down">The internet was made for <span class="highlight">documents</span></li>
               <li class="fragment fade-down">Global scope and the cascade made sense</li>
-              <li class="fragment fade-down">Denizens of the web have changed. Web development has changed.</li>
+              <li class="fragment fade-down">Denizens of the web have changed.</li>
+              <li class="fragment fade-down">Web development has changed.</li>
             </ul>
 
             <aside class="notes">
               <ul>
                 <li>I started making websites in the late 90s. It was a very, different world back then!</li>
-                <li>Denizens of the web have changed. Having your own stylesheet for your favourite websites wasn't unheard of.</li>
-                <li>Web development has changed. I'm pretty sure I spend more time now troubleshooting npm and the various javascript frameworks I use, than I do writing actual HTML or CSS.</li>
+                <li>See, the old internet was made for documents.</li>
+                <li>When you're just rendering documents, annoying things like global scope actually makes a lot of sense.</li>
+                <li>People of the web have changed. Having your own stylesheet for your favourite websites wasn't unheard of.</li>
+                <li>Web development has changed. The DOM is no longer static. I'm pretty sure I spend more time now troubleshooting npm and Node and javascript frameworks, than I do writing actual HTML or CSS.</li>
                 <li>It's a wild new world we live in.</li>
               </ul>
             </aside>
@@ -69,10 +81,12 @@
                 <li>In the last 20 years, we've molded CSS to our needs</li>
                 <li>In 2006, SASS was released. And consequently blew all of our minds. Who remembers the first day they came across SASS? Changed my life.</li>
                 <li>PostCSS meant our poor fingers didn't have to type out every single browser prefix</li>
-                <li>CSS Modules: What's this? Encapsulation?? In CSS??? It truly is the future.</li>
-                <li>And I'm not even mentioning the five bajillion different namespacing conventions that are out there.</li>
+                <li>CSS Modules mean the end of a global namespace. We're using it at work at the moment to build stateless functional components, and it is beautiful.</li>
+                <li>I'm not even mentioning the five bajillion different namespacing conventions that are out there.</li>
                 <li>But you might see a pattern here. We're increaasingly tacking on more solutions, more conventions, more toolsets</li>
-                <li>It's taking up mental capacity that should be set aside for *actually making websites*</li>
+                <li>Cruft around creating the perfect workflow and tooling is taking up mental capacity</li>
+                <li>I want to focus on making the actual website.</li>
+                <li>In the midst of all this tooling, the main pain point of CSS is still the same:</li>
               </ul>
             </aside>
           </section>
@@ -83,14 +97,14 @@
 
         <section data-transition="fade-in slide-out">
           <section data-transition="fade-in slide-out">
-            <h3>It's hard to write <span class="highlight">maintainable</span> CSS at <span class="highlight">scale</span>.</h3>
+            <h2>It's hard to write <span class="highlight">maintainable</span> CSS at <span class="highlight">scale</span>.</h2>
           </section>
 
           <section data-transition="fade-in">
             <h2>Bad for maintainance?<br>Bad at scale?</h2>
             <ul>
-              <li class="fragment fade-down">Lack of scoping features <span class="ghost">&rarr; Global scope, leaky code &rarr; specificity wars</span></li>
-              <li class="fragment fade-down">Confusing behaviour around specificity, inheritance and the cascade <span class="ghost">&rarr; specificity wars</span></li>
+              <li class="fragment fade-down">Lack of scoping features <span class="ghost">&rarr; specificity wars</span></li>
+              <li class="fragment fade-down">Confusing behaviour of specificity, inheritance, cascade <span class="ghost"><br>&rarr; specificity wars</span></li>
               <li class="fragment fade-down">...</li>
             </ul>
 
@@ -101,8 +115,9 @@
                 <li>It means confusion around which rules apply and which don't. How am I supposed to maintain something if I don't know what's going to happen if I change the code?</li>
                 <li>The list goes on:</li>
                 <li>It means dead code is hidden and lives around forever</li>
-                <li>It means working with other people, including your past self, is really, really hard.</li>
-                <li>This is a very incomplete list</li>
+                <li>It means working with other people, including yourself, six months ago, is really, really hard.</li>
+                <li>I'm preaching to the choir here, everyone here has fought with CSS.</li>
+                <li>This is a very incomplete list - as we all knwo</li>
               </ul>
             </aside>
           </section>
@@ -110,8 +125,8 @@
           <section data-transition="slide-out">
             <h2>Bad for maintainance?<br>Bad at scale?</h2>
             <ul>
-              <li><span class="highlight">Lack of scoping features</span> <span class="fragment fade-down">&rarr; Global scope, leaky code &rarr; specificity wars</span></li>
-              <li><span class="highlight">Confusing behaviour around specificity, inheritance and the cascade</span> <span class="fragment fade-down">&rarr; specificity wars</span></li>
+              <li><span class="highlight">Lack of scoping features</span> <span class="fragment fade-down">&rarr; <em>specificity wars</em></span></li>
+              <li>Confusing behaviour of <span class="highlight">specificity, inheritance, cascade</span> <span class="fragment fade-down"><br>&rarr; <em>specificity wars</em></span></li>
               <li>...</li>
             </ul>
 
@@ -159,6 +174,7 @@
               <ul>
                 <li>I want to quickly touch on JS as an aside, because it's just a pillar of current web developent.</li>
                 <li>I have no beef with javascript.</li>
+                <li>It's making my CSS life easier, better</li>
                 <li>It's doing exactly what we need right now, filling in the gaps the old web left behind</li>
                 <li>But if we take our current trajectory to its logical conclusion, web development is going to simply be javascript development</li>
               </ul>
@@ -663,9 +679,9 @@
 
             <aside class="notes">
               <ul>
-                <li>What if a framework's rules sit here?</li>
-                <li>The app provider's rules sit here?</li>
-                <li>And yours sits here?</li>
+                <li>What if a framework's CSS sit here?</li>
+                <li>The app provider's CSS sit here?</li>
+                <li>And yours CSS here?</li>
                 <li>And I know what some of you are already thinking, this looks it could very easily become this</li>
               </ul>
             </aside>
@@ -708,6 +724,8 @@
               <ul>
                 <li>Yes, it's not perfect, it can totally be abused</li>
                 <li>But hey- at least it works every time! Not like !importants</li>
+                <li>I'm not too worried about the specifics of how this might work.</li>
+                <li>The important part of this idea is</li>
                 <li>It encourages devs to interact with the cascade - therefore educate themseles about the cascade</li>
                 <li>We get rid of that fear around the unknown. Now you know exactly where in the cascade you sit, and why.</li>
               </ul>
@@ -726,7 +744,7 @@
               <li class="fragment fade-down">CSS4 Spec is exciting! --variables, :scope... play with it!</li>
               <li class="fragment fade-down">SASS 3.1 supports first class functions</li>
               <li class="fragment fade-down">BEM vs Atomic is like tabs vs spaces. Pros and cons. Try both out. Don't choose one blindly.</li>
-              <li class="fragment fade-down">Separation of content, style and logic is crucial for the internet's survival.</li>
+              <li class="fragment fade-down">Good interfacing between HTML/CSS/JS needed for separation of concerns</li>
             </ul>
 
             <aside class="notes">
@@ -735,7 +753,7 @@
                 <li>CSS4 is exciting! Most of it is already implemented in Chrome and Firefox so unless you need to support IE/Edge, go nuts!</li>
                 <li>I would be really intrigued to see what CSS could look like as a fully fledged functional programming language, but we're not there yet. So play around! Explore.</li>
                 <li>BEM v Atomic</li>
-                <li>Separation is crucial. Accessibility is crucial. This is something we all need to keep in mind for the future of web development</li>
+                <li>To keep content, style and logic separate, we need good interfaces between them, so we don't just inline all our CSS or throw everything in Javascript. I dunno about you, but Barak's talk about Houdini API has got me very excited about the future.</li>
               </ul>
             </aside>
           </section>
